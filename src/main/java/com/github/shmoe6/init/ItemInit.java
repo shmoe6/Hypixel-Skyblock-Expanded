@@ -1,6 +1,7 @@
 package com.github.shmoe6.init;
 
 import com.github.shmoe6.Reference;
+import com.github.shmoe6.items.Terminator;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.item.Item;
@@ -15,6 +16,7 @@ public class ItemInit {
     public static final List<Item> ITEMS = new ArrayList<Item>();
 
     public Item test_item;
+    public Item terminator;
 
     public ItemInit() {
         instance = this;
@@ -24,14 +26,17 @@ public class ItemInit {
 
     private void init() {
         test_item = new Item().setUnlocalizedName("test_item");
+        terminator = new Terminator().setUnlocalizedName("terminator");
     }
 
     private void register() {
         registerItem(test_item);
+        registerItem(terminator);
     }
 
     public void registerRenders() {
         registerRender(test_item);
+        registerRender(terminator);
     }
 
     public static void registerItem(Item item) {
