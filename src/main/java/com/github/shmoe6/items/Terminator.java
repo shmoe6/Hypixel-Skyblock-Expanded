@@ -16,8 +16,10 @@ public class Terminator extends Item {
     @Override
     public ItemStack onItemRightClick(ItemStack itemStackIn, World worldIn, EntityPlayer playerIn) {
         EntityArrow entityarrow = new EntityArrow(worldIn, playerIn, 1 * 2.0F);
+
         worldIn.playSoundAtEntity(playerIn, "random.bow", 1.0F, 1.0F / (itemRand.nextFloat() * 0.4F + 1.2F) + 1 * 0.5F);
         worldIn.spawnEntityInWorld(entityarrow);
+
         return itemStackIn;
     }
 

@@ -1,7 +1,10 @@
 package com.github.shmoe6;
 
+import com.github.shmoe6.handlers.DropHandler;
 import com.github.shmoe6.init.ItemInit;
 import com.github.shmoe6.proxy.CommonProxy;
+import net.minecraft.client.Minecraft;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -27,6 +30,8 @@ public class HSE {
     public static void init(FMLInitializationEvent event) {
         System.out.println(Reference.NAME + ": init...");
         proxy.registerRenders();
+
+        MinecraftForge.EVENT_BUS.register(new DropHandler());
     }
 
     @Mod.EventHandler()

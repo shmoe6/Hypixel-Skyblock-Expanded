@@ -1,6 +1,7 @@
 package com.github.shmoe6.init;
 
 import com.github.shmoe6.Reference;
+import com.github.shmoe6.items.SkyblockMenu;
 import com.github.shmoe6.items.Terminator;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.model.ModelResourceLocation;
@@ -17,6 +18,7 @@ public class ItemInit {
 
     public Item test_item;
     public Item terminator;
+    public Item skyblock_menu;
 
     public ItemInit() {
         instance = this;
@@ -27,16 +29,19 @@ public class ItemInit {
     private void init() {
         test_item = new Item().setUnlocalizedName("test_item");
         terminator = new Terminator().setUnlocalizedName("terminator");
+        skyblock_menu = new SkyblockMenu().setUnlocalizedName("skyblock_menu");
     }
 
     private void register() {
         registerItem(test_item);
         registerItem(terminator);
+        registerItem(skyblock_menu);
     }
 
     public void registerRenders() {
         registerRender(test_item);
         registerRender(terminator);
+        registerRender(skyblock_menu);
     }
 
     public static void registerItem(Item item) {
